@@ -5,11 +5,14 @@
 </ion-header>
 
 <ion-content>
-  <img [src]="currentImage" *ngIf="currentImage">
+  <ng-container *ngFor="let photo of gallery">
+    <img [src]="photo.data">
+  </ng-container>
+
 
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-      <ion-fab-button (click)="takePicture()">
-        <ion-icon name="camera"></ion-icon>
-      </ion-fab-button>
+    <ion-fab-button (click)="takePicture()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
   </ion-fab>
 </ion-content>
